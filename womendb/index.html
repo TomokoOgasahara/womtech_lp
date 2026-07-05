@@ -83,7 +83,8 @@ function dcount(r){var n=0;for(var i=0;i<METRICS.length;i++)if(gv(r,METRICS[i].k
 function norm(k,v){var lo=RANGES[k][0],hi=RANGES[k][1];var t=(v-lo)/(hi-lo);return Math.max(0,Math.min(1,t));}
 function score(r){var s=0,n=0,nd=0;for(var i=0;i<METRICS.length;i++){var v=gv(r,METRICS[i].k);if(v==null)nd++;else{s+=norm(METRICS[i].k,v);n++;}}if(n<3)return null;return s/n*100-nd*8;}
 function grade(r){var s=score(r);if(s==null)return null;return s>=72?'S':s>=58?'A':s>=42?'B':'C';}
-function gb(r){var g=grade(r);if(!g)return '<span class="gbadge" style="background:#8a97a3">ー</span>';return '<span class="gbadge" style="background:'+GCOL[g]+'">'+g+'</span>';}
+function showGrade(){return location.hash.toLowerCase()==='#grade';}
+function gb(r){if(!showGrade())return '';var g=grade(r);if(!g)return '<span class="gbadge" style="background:#8a97a3">ー</span>';return '<span class="gbadge" style="background:'+GCOL[g]+'">'+g+'</span>';}
 var INDS={},PREFS={},SIZES={};
 D.forEach(function(r){INDS[r[1]]=(INDS[r[1]]||0)+1;PREFS[r[2]]=1;SIZES[r[3]]=1;});
 var indList=Object.keys(INDS).filter(function(x){return x;}).sort(function(a,b){return INDS[b]-INDS[a];});
@@ -133,7 +134,9 @@ function renderDash(){
 function searchD(q){q=q.trim();if(q.length<2)return[];var res=[];for(var i=0;i<D.length;i++){if(D[i][0].indexOf(q)>=0){D[i]._i=i;res.push(D[i]);if(res.length>=30)break;}}return res;}
 function coSearch(){var res=searchD($('coQ').value);$('coRes').classList.toggle('hidden',!res.length);
  $('coRes').innerHTML=res.map(function(r){return '<div onclick="openCo('+r._i+')">'+esc(r[0])+' <span class="note">'+esc(r[1])+' / '+esc(r[2])+' / '+esc(r[3])+' / 開示'+dcount(r)+'項目</span></div>';}).join('');}
-function openCo(i){show('co');var r=D[i];r._i=i;$('coRes').classList.add('hidden');$('coBody').classList.remove('hidden');
+var lastCoI=null;
+function openCo(i){show('co');lastCoI=i;renderCoBody(i);window.scrollTo(0,0);}
+function renderCoBody(i){var r=D[i];r._i=i;$('coRes').classList.add('hidden');$('coBody').classList.remove('hidden');
  var rows=METRICS.map(function(mt){var v=gv(r,mt.k);var a=iavg(r[1],mt.k);var ex='';
   if(mt.k==='tenGap'&&r[11]!=null)ex=' <span class="note">(男'+r[11]+'年/女'+r[12]+'年)</span>';
   if(mt.k==='pjM'&&r[14]!=null)ex=' <span class="note">(女性は'+r[14]+'%)</span>';
@@ -155,8 +158,7 @@ function openCo(i){show('co');var r=D[i];r._i=i;$('coRes').classList.add('hidden
  if(!out.length)out.push('業種平均から大きく外れる項目は検出されませんでした。');
  $('coBody').innerHTML='<div class="row"><h2 style="font-size:20px">'+esc(r[0])+'</h2>'+gb(r)+'<span class="note">'+esc(r[1])+' / '+esc(r[2])+' / '+esc(r[3])+'</span></div>'+
   '<table><tr><th>指標</th><th>当社</th><th>業種平均</th></tr>'+rows+'</table>'+
-  '<div class="ai"><h3>📊 この企業の考察(公表データから自動生成)</h3><ul>'+out.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="foot">公表された事実と業種平均との比較のみに基づく機械生成コメントです。主観的評価を含みません。</div></div>';
- window.scrollTo(0,0);}
+  '<div class="ai"><h3>📊 この企業の考察(公表データから自動生成)</h3><ul>'+out.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="foot">公表された事実と業種平均との比較のみに基づく機械生成コメントです。主観的評価を含みません。</div></div>';}
 var cmpSet=[];
 function cmpSearch(){var res=searchD($('cmpQ').value);$('cmpRes').classList.toggle('hidden',!res.length);
  $('cmpRes').innerHTML=res.map(function(r){return '<div onclick="cmpAdd('+r._i+')">'+esc(r[0])+' <span class="note">'+esc(r[1])+' / 開示'+dcount(r)+'項目</span></div>';}).join('');}
@@ -183,5 +185,6 @@ function renderCmp(){
   if(gv(mx2,'pjM')-gv(mn2,'pjM')>=25)out.push('男性育休取得率('+esc(mx2[0])+' '+gv(mx2,'pjM')+'% / '+esc(mn2[0])+' '+gv(mn2,'pjM')+'%)の差は、制度が文化として根付いているかの差を示します。');}
  if(!out.length)out.push('選択企業間で公表データ上の大きな差は検出されませんでした。');
  $('cmpAi').innerHTML='<h3>📊 比較考察(公表データから自動生成)</h3><ul>'+out.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="foot">公表データのみに基づく機械生成コメントです。</div>';}
+window.addEventListener('hashchange',function(){renderDash();if(lastCoI!=null)renderCoBody(lastCoI);if(cmpSet.length>=2)renderCmp();});
 init();
 </script></body></html>
