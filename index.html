@@ -1,164 +1,595 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <title>Wom-tech - 理工系女性のためのコミュニティ</title>
-    <meta
-      name="description"
-      content="Wom-techは理工系女性のためのコミュニティです。キャリア選択、ロールモデル、多様性を支援します。"
-    />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav">
-        <img class="w-logo" src="img/w-logo-1.png" alt="Wom-techロゴ"/>
-        <ul class="nav-list">
-          <li><a href="#about">Wom-techとは？</a></li>
-          <li><a href="#contents">Wom-techで出来ること</a></li>
-          <li><a href="#register">メンバー登録</a></li>
-          <li><a href="#management">運営</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="main_visual">
-      <img class="main_visual" src="img/main_visual.jpg" alt="Wom-techメイン"/></div>
-      <section class="hero">
-      <section id="about"></section>
-        <h1>Wom-tech とは？</h1>
-        <p class="hero-description">繋がりは、チカラ<br />居場所をこえて、可能性を広げるコミュニティ</p>
-        <p class="hero-target">
-          対象者：理工系女子大学生・女性技術者・科学者<br />目的：会社や大学などの枠を超えて互いにつながることで、<br />理工系分野で自分らしいキャリアを切り拓くコミュニティを目指しています
-        </p>
-        <a
-          href="https://form.run/@womtech--Q6fi8AujP1lGubnPHypq"
-          class="cta-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >メンバー登録はこちら</a
-        >
-      </section>
-      <section class="recommendations">
-        <h2>＼＼＼こんな方におすすめ／／／</h2>
-        <ul>
-          <li>✔ 自分に合ったキャリア選択がしたい方</li>
-          <li>✔ 周囲にロールモデルがいない方</li>
-          <li>✔ 多様性で理工系を盛り上げたい方</li>
-        </ul>
-      </section>
-      <section id="contents" class="activities">
-        <h2>Wom-techで出来ること</h2>
-        <div class="activity-grid">
-          <div class="activity-item">
-            <img src="img/adobestock-303016453-1.png" alt="学ぶ活動のイメージ" />
-            <h3>まなぶ</h3>
-            <p>年数回のイベントを通じ、キャリアパスを強化するために必要な様々な知識を学ぶことができます</p>
-          </div>
-          <div class="activity-item">
-            <img src="img/adobestock-458153627-1.png" alt="つながる活動のイメージ" />
-            <h3>つながる</h3>
-            <p>オンライン交流会を通じて所属と世代を超えたつながりをつくります</p>
-          </div>
-          <div class="activity-item">
-            <img src="img/image-6.png" alt="えがく活動のイメージ" />
-            <h3>えがく</h3>
-            <p>Wom-tech独自の「女性活躍ダッシュボード」「適職診断ツール」で自分に合ったキャリア選択をサポートします</p>
-          </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wom-tech - 理工系女性のためのコミュニティ</title>
+<meta name="description" content="Wom-techは理工系女性のためのコミュニティです。キャリア選択、ロールモデル、多様性を支援します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#153050;
+  --ink-soft:#5a708a;
+  --purple:#3f9ad9;
+  --purple-deep:#2b6fa3;
+  --coral:#f7a71c;
+  --coral-soft:#ffeccb;
+  --teal:#8ecdf0;
+  --lav:#eef6fc;
+  --lav-2:#e4f1fb;
+  --bg:#ffffff;
+  --line:#dbeaf6;
+  --radius:22px;
+  --shadow:0 18px 50px -20px rgba(31,95,158,.32);
+  --shadow-sm:0 10px 30px -18px rgba(31,95,158,.38);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
+  font-weight:500;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  letter-spacing:.03em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  font-size:.72rem;color:var(--purple);
+  display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--coral);border-radius:2px}
+.sec-title{
+  font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700;line-height:1.35;
+  margin:.5rem 0 0;letter-spacing:.01em;
+}
+.sec-lead{color:var(--ink-soft);margin-top:1rem;font-size:1.02rem}
+.section{padding:96px 0}
+
+/* NAV */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:.3s;
+}
+header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(74,31,158,.5)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.15rem}
+.brand img{height:38px;width:auto}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:.2s;position:relative}
+.nav-links a:hover{color:var(--purple)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--purple);transition:.25s;border-radius:2px}
+.nav-links a:hover::after{width:100%}
+.btn{
+  display:inline-flex;align-items:center;gap:.5em;
+  font-weight:700;font-size:.95rem;
+  padding:.85em 1.6em;border-radius:100px;transition:.25s;cursor:pointer;border:none;
+}
+.btn-primary{background:var(--purple);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--purple-deep);box-shadow:0 16px 36px -14px rgba(31,95,158,.55)}
+.btn-ghost{background:#fff;color:var(--purple);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--purple);transform:translateY(-2px)}
+.nav .btn{padding:.7em 1.4em;font-size:.9rem}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+.menu-toggle span{width:26px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* HERO */
+.hero{position:relative;padding:150px 0 100px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-2;background:var(--lav);
+}
+.blob{position:absolute;border-radius:50%;filter:blur(8px);z-index:-1;opacity:.5}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{
+  font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:700;line-height:1.28;letter-spacing:.01em;
+}
+.hero h1 .grad{color:var(--purple)}
+.hero p.sub{font-size:1.08rem;color:var(--ink-soft);margin-top:22px;max-width:30em}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.tag{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.5em 1.1em;font-size:.85rem;font-weight:500;color:var(--ink-soft);box-shadow:var(--shadow-sm)}
+.tag b{color:var(--purple)}
+.hero-visual{position:relative}
+.hero-visual .frame{
+  border-radius:28px;overflow:hidden;box-shadow:var(--shadow);
+  transform:rotate(1.5deg);border:8px solid #fff;
+}
+.hero-visual .frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.2}
+.float-card{
+  position:absolute;background:#fff;border-radius:16px;padding:14px 18px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;font-weight:700;font-size:.9rem;
+}
+.float-card .dot{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem;color:#fff}
+.fc-1{top:-18px;left:-26px}
+.fc-1 .dot{background:var(--purple)}
+.fc-2{bottom:-22px;right:-20px}
+.fc-2 .dot{background:var(--coral)}
+.fc-2 small{display:block;font-weight:500;color:var(--ink-soft);font-size:.72rem}
+
+/* MARQUEE STRIP */
+.strip{background:var(--purple);color:#fff;padding:18px 0;overflow:hidden}
+.strip .track{display:flex;gap:56px;white-space:nowrap;animation:scroll 26s linear infinite;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;letter-spacing:.05em;opacity:.95}
+.strip .track span{display:inline-flex;align-items:center;gap:56px}
+.strip .track span::after{content:"✦";color:var(--coral)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ABOUT */
+.about-card{
+  background:var(--lav);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(30px,5vw,60px);box-shadow:var(--shadow-sm);text-align:center;
+}
+.about-card .catch{font-size:clamp(1.5rem,3.6vw,2.2rem);font-weight:700;line-height:1.5}
+.about-card .catch em{font-style:normal;background:linear-gradient(transparent 62%,var(--coral-soft) 0);padding:0 .1em}
+.about-meta{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:660px;margin:32px auto 0}
+.about-meta div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 26px;text-align:left}
+@media(max-width:600px){.about-meta{grid-template-columns:1fr}}
+.about-meta .k{font-size:.75rem;font-weight:700;color:var(--purple);letter-spacing:.05em}
+.about-meta .v{font-size:.95rem;margin-top:4px;color:var(--ink)}
+
+/* AUDIENCE */
+.aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.aud{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:.3s;position:relative;overflow:hidden}
+.aud:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.aud .check{width:44px;height:44px;border-radius:12px;background:var(--lav);color:var(--purple);display:grid;place-items:center;font-size:1.3rem;font-weight:700;margin-bottom:16px}
+.aud p{font-weight:700;font-size:1.02rem;line-height:1.6}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.feat:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.feat .ph{aspect-ratio:16/10;overflow:hidden}
+.feat .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.feat:hover .ph img{transform:scale(1.06)}
+.feat .body{padding:26px 26px 30px}
+.feat .num{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:.75rem;letter-spacing:.15em;color:var(--coral)}
+.feat h3{font-size:1.3rem;font-weight:700;margin:6px 0 10px;display:flex;align-items:center;gap:8px}
+.feat p{color:var(--ink-soft);font-size:.95rem}
+
+/* STEPS */
+.steps-sec{background:var(--lav)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;position:relative}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;text-align:center;position:relative;transition:.3s}
+.step:hover{box-shadow:var(--shadow);transform:translateY(-6px)}
+.step .n{
+  width:56px;height:56px;margin:0 auto 18px;border-radius:50%;
+  background:var(--purple);color:#fff;
+  display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.5rem;
+  box-shadow:var(--shadow-sm);
+}
+.step h4{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.step p{color:var(--ink-soft);font-size:.92rem}
+.step-note{text-align:center;color:var(--ink-soft);margin-top:8px;font-size:.95rem}
+
+/* STATS */
+.stats-sec{background:var(--purple);color:#fff;border-radius:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.stat .big{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.6rem,6vw,3.6rem);line-height:1;color:#fff}
+.stat .big span{color:var(--coral-soft)}
+.stat .lbl{margin-top:10px;opacity:.9;font-size:.95rem}
+.stats-sec .sec-title{color:#fff}
+.stats-sec .eyebrow{color:#fff}
+.stats-sec .eyebrow::before{background:var(--coral)}
+
+/* EVENTS TIMELINE */
+.tl{margin-top:52px;position:relative;padding-left:8px}
+.tl-item{display:grid;grid-template-columns:130px 1fr;gap:26px;padding:22px 0;border-top:1px solid var(--line);align-items:start}
+.tl-item:hover .tl-date{color:var(--purple)}
+.tl-date{font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--coral);font-size:1.05rem;transition:.2s;position:relative;padding-left:22px}
+.tl-date::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--purple);box-shadow:0 0 0 4px var(--lav)}
+.tl-body h4{font-size:1.08rem;font-weight:700;line-height:1.55}
+.tl-body span{display:block;color:var(--ink-soft);font-size:.88rem;margin-top:4px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.gallery img{border-radius:16px;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-sm);transition:.35s}
+.gallery img:hover{transform:scale(1.03) rotate(-1deg)}
+
+/* FOUNDER */
+.founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center;background:var(--lav);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(28px,4vw,52px);box-shadow:var(--shadow-sm)}
+.founder .photo{position:relative}
+.founder .photo img{border-radius:20px;box-shadow:var(--shadow);aspect-ratio:1/1;object-fit:cover}
+.founder .role{font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--purple)}
+.founder h3{font-size:1.6rem;font-weight:700;margin:2px 0 18px}
+.founder p{color:var(--ink-soft);font-size:.98rem}
+.quote-mark{font-family:"Cormorant Garamond",serif;font-size:3rem;color:var(--coral);line-height:.4;opacity:.5}
+.awards{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+.awards-h{font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--purple);margin-bottom:10px}
+.awards ul{list-style:none}
+.awards li{position:relative;padding-left:26px;font-size:.92rem;line-height:1.7;color:var(--ink)}
+.awards li:not(:last-child){margin-bottom:6px}
+.awards li::before{content:"";position:absolute;left:2px;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--coral)}
+
+/* CONTACT / CTA */
+.cta{position:relative;overflow:hidden;background:var(--purple-deep);color:#fff;border-radius:32px;padding:clamp(40px,6vw,72px);text-align:center;box-shadow:var(--shadow)}
+.cta::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:var(--coral);opacity:.9;top:-90px;right:-60px}
+.cta::after{content:"";position:absolute;width:170px;height:170px;border:14px solid rgba(255,255,255,.12);border-radius:50%;bottom:-70px;left:-50px}
+.cta h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;position:relative}
+.cta p{opacity:.92;margin-top:16px;position:relative;max-width:44em;margin-left:auto;margin-right:auto}
+.cta .tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px;position:relative}
+.cta .tags span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:.5em 1.1em;font-size:.85rem}
+.cta .btns{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap;position:relative}
+.cta .btn-primary{background:#fff;color:var(--purple)}
+.cta .btn-white-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.cta .btn-white-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#140e26;color:#cfc7e8;padding:56px 0 30px;margin-top:96px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;align-items:center;gap:12px;font-weight:700;color:#fff;font-size:1.2rem}
+.foot-brand img{height:36px}
+.ig-btn{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--ink);padding:12px 14px 12px 20px;border-radius:16px;font-weight:700;transition:.25s;box-shadow:0 12px 32px -14px rgba(0,0,0,.55)}
+.ig-btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(0,0,0,.6)}
+.ig-btn svg{width:30px;height:30px;flex:none;color:var(--purple)}
+.ig-txt{display:flex;flex-direction:column;line-height:1.25;font-size:.74rem;color:var(--ink-soft)}
+.ig-txt b{font-size:1.02rem;color:var(--ink)}
+.ig-follow{background:var(--coral);color:#fff;padding:.5em 1.1em;border-radius:100px;font-size:.82rem}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.82rem;opacity:.7}
+.foot-nav{display:flex;gap:20px;flex-wrap:wrap}
+.foot-nav a:hover{color:#fff}
+
+/* MEDIA */
+.media{text-align:center;margin-top:64px}
+.media-title{font-size:1.3rem;font-weight:700;margin:.5rem 0 22px}
+.media-list{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.media-list a,.media-list span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.7em 1.6em;font-weight:700;font-size:1rem;color:var(--ink);box-shadow:var(--shadow-sm);transition:.25s}
+.media-list a:hover{border-color:var(--purple);color:var(--purple);transform:translateY(-2px)}
+
+/* STEM GATE */
+.sg-badge{display:inline-block;background:var(--coral);color:#fff;font-weight:700;font-size:.72rem;letter-spacing:.05em;padding:.4em 1em;border-radius:100px;margin-bottom:14px}
+.sg-top{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;margin-top:20px}
+.sg-photo .frame{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:8px solid #fff}
+.sg-photo .frame img{width:100%;object-fit:cover;aspect-ratio:16/11}
+.sg-lead{color:var(--ink-soft);font-size:1rem}
+.sg-meta{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.sg-meta span{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.5em 1.1em;font-size:.86rem;font-weight:700}
+.sg-meta span b{color:var(--purple)}
+.sg-partners{margin-top:18px;font-size:.92rem;color:var(--ink-soft)}
+.sg-partners b{color:var(--ink)}
+.sg-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.sg-step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;text-align:center;position:relative}
+.sg-step .no{font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--coral);font-size:1.6rem;line-height:1}
+.sg-step h4{font-size:1.1rem;font-weight:700;margin:8px 0 4px}
+.sg-step p{font-size:.86rem;color:var(--ink-soft)}
+.sg-step:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--purple);font-weight:700;z-index:2}
+.sg-content{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.sg-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+.sg-card .cno{font-weight:700;color:var(--purple);font-size:.85rem}
+.sg-card h5{font-size:1rem;font-weight:700;margin:4px 0 6px}
+.sg-card p{font-size:.85rem;color:var(--ink-soft)}
+.sg-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+@media(max-width:900px){.sg-top{grid-template-columns:1fr}.sg-flow,.sg-content{grid-template-columns:1fr}.sg-step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-13px;transform:translateX(-50%)}}
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero-grid,.founder{grid-template-columns:1fr}
+  .founder .photo{max-width:340px;margin:0 auto}
+  .aud-grid,.feat-grid,.steps,.stats,.gallery{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .nav-links{
+    position:fixed;top:74px;left:0;right:0;background:#fff;flex-direction:column;
+    gap:0;padding:0;max-height:0;overflow:hidden;transition:.35s;border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{max-height:420px;padding:12px 0 22px}
+  .nav-links a{padding:14px 24px;width:100%}
+  .nav-links .btn{margin:8px 24px 0}
+  .menu-toggle{display:flex}
+  .hero{padding:120px 0 70px}
+  .section{padding:70px 0}
+  .tl-item{grid-template-columns:1fr;gap:8px}
+}
+@media(min-width:601px)and(max-width:900px){
+  .aud-grid,.feat-grid,.steps,.gallery{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="https://tomokoogasahara.github.io/womtech_lp/img/w-logo-1.png" alt="Wom-techロゴ">Wom-tech</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#about">Wom-techとは</a>
+      <a href="#contents">出来ること</a>
+      <a href="#steps">登録の流れ</a>
+      <a href="#results">実績</a>
+      <a href="#stemgate">STEM GATE</a>
+      <a href="#management">運営</a>
+      <a class="btn btn-primary" href="https://forms.gle/cnMAUdtykoY2q6gv5" target="_blank" rel="noopener">メンバー登録</a>
+    </nav>
+    <button class="menu-toggle" id="toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Community for women in STEM</span>
+      <h1>繋がりは、<span class="grad">チカラ。</span><br>居場所をこえて、<br>可能性を広げる。</h1>
+      <p class="sub">理工系分野で自分らしいキャリアを切り拓く。会社や大学の枠を超えて、女子学生・女性技術者・科学者がつながるコミュニティです。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://forms.gle/cnMAUdtykoY2q6gv5" target="_blank" rel="noopener">メンバー登録はこちら →</a>
+        <a class="btn btn-ghost" href="#about">Wom-techとは？</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag"><b>約80人</b> のコミュニティ</span>
+        <span class="tag">大学生 <b>×</b> 社会人</span>
+        <span class="tag">安心・安全な場</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="frame"><img src="https://tomokoogasahara.github.io/womtech_lp/img/main_visual.jpg" alt="Wom-techメインビジュアル"></div>
+      <div class="float-card fc-1"><span class="dot">◎</span>まなぶ・つながる</div>
+      <div class="float-card fc-2"><span class="dot">✦</span>えがく<small>自分らしいキャリア</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="track">
+    <span>まなぶ つながる えがく 多様性で理工系を盛り上げる ロールモデルとの出会い キャリアの選択肢を広げる </span>
+    <span>まなぶ つながる えがく 多様性で理工系を盛り上げる ロールモデルとの出会い キャリアの選択肢を広げる </span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">About us</span>
+      <h2 class="sec-title">Wom-tech とは？</h2>
+    </div>
+    <div class="about-card reveal" style="margin-top:44px">
+      <p class="catch">会社や大学などの枠を超えて互いにつながり、<br>理工系分野で<em>自分らしいキャリア</em>を切り拓く。</p>
+      <div class="about-meta">
+        <div><div class="k">対象者</div><div class="v">理工系女子大学生・女性技術者・科学者</div></div>
+        <div><div class="k">目的</div><div class="v">枠を超えたつながりで可能性を広げるコミュニティ</div></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:72px" class="reveal">
+      <span class="eyebrow">Who is it for</span>
+      <h2 class="sec-title">こんな方におすすめ</h2>
+    </div>
+    <div class="aud-grid">
+      <div class="aud reveal"><div class="check">✓</div><p>自分に合ったキャリア選択がしたい方</p></div>
+      <div class="aud reveal"><div class="check">✓</div><p>周囲にロールモデルがいない方</p></div>
+      <div class="aud reveal"><div class="check">✓</div><p>多様性で理工系を盛り上げたい方</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="contents" style="background:var(--lav)">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">What you can do</span>
+      <h2 class="sec-title">Wom-techで出来ること</h2>
+      <p class="sec-lead">3つのアクションで、あなたのキャリアを前へ。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="ph"><img src="https://tomokoogasahara.github.io/womtech_lp/img/adobestock-303016453-1.png" alt="まなぶ"></div>
+        <div class="body"><div class="num">01</div><h3>まなぶ 📖</h3><p>年数回のイベントを通じ、キャリアパスを強化するために必要な様々な知識を学ぶことができます。</p></div>
+      </div>
+      <div class="feat reveal">
+        <div class="ph"><img src="https://tomokoogasahara.github.io/womtech_lp/img/adobestock-458153627-1.png" alt="つながる"></div>
+        <div class="body"><div class="num">02</div><h3>つながる 🤝</h3><p>オンライン交流会を通じて、所属と世代を超えたつながりをつくります。</p></div>
+      </div>
+      <div class="feat reveal">
+        <div class="ph"><img src="https://tomokoogasahara.github.io/womtech_lp/img/image-6.png" alt="えがく"></div>
+        <div class="body"><div class="num">03</div><h3>えがく ✎</h3><p>STEM GATEプログラムの提供や女性活躍データベースダッシュボード（開発中）を通じ、自分に合ったキャリア選択をサポートします。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section steps-sec" id="steps">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">How to join</span>
+      <h2 class="sec-title">メンバー登録までの流れ</h2>
+      <p class="sec-lead">安心・安全な場を提供するため、登録までに複数のステップを設けています。</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h4>申し込み</h4><p>申込みボタンのリンク先から必要事項を記入して、お申込みください。</p></div>
+      <div class="step reveal"><div class="n">2</div><h4>説明会予約</h4><p>後日ご案内する説明会をご予約ください。（オンライン・約15分）</p></div>
+      <div class="step reveal"><div class="n">3</div><h4>利用開始</h4><p>メンバー限定のSlackにご招待します。</p></div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a class="btn btn-primary" href="https://forms.gle/cnMAUdtykoY2q6gv5" target="_blank" rel="noopener">メンバー登録はこちら →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats-sec" id="results">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:48px" class="reveal">
+      <span class="eyebrow">Our impact</span>
+      <h2 class="sec-title">コミュニティの実績</h2>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="big">約80<span style="font-size:1.4rem">人</span></div><div class="lbl">理工系女性のメンバーとつながれる<br><span style="opacity:.78;font-size:.82em">（2026年7月現在）</span></div></div>
+      <div class="stat reveal"><div class="big">300<span style="font-size:1.4rem">名+</span></div><div class="lbl">これまでのイベント参加者（のべ人数）</div></div>
+      <div class="stat reveal"><div class="big">10<span style="font-size:1.4rem">回+</span></div><div class="lbl">イベント開催実績</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section" id="events">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">Events</span>
+      <h2 class="sec-title">イベント開催実績</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="tl-date">2024.02</div><div class="tl-body"><h4>ものづくりとジェンダーの新しい関係</h4><span>名古屋工業大学・加野准教授</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2024.06</div><div class="tl-body"><h4>STEM女子未来会議</h4><span>スタンフォード大学・松本杏奈さん</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2024.09</div><div class="tl-body"><h4>生成AIの仕組みと活用</h4><span>株式会社クラフターCEO・小島舞子さん</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2024.12</div><div class="tl-body"><h4>近代＝男性主導社会の黄昏を前に</h4><span>大阪大学／京都大学名誉教授・伊藤公雄さん</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2025.04</div><div class="tl-body"><h4>STEM女子未来会議</h4><span>早稲田大学・高坂実優さん、中央大学・高橋彩乃さん、お茶の水女子大学・篠田万穂さん、株式会社キヤノン・飯淵可奈江さん</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2025.05</div><div class="tl-body"><h4>製造業に勤める女性技術者に対するアンケート調査結果報告会</h4></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2025.10</div><div class="tl-body"><h4>理工系女性のためのキャリア・ワークショップ</h4></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2025.11</div><div class="tl-body"><h4>ケミカルマテリアルジャパン2025</h4><span>「未来をひらく化学のお仕事」学生向けセミナー開催</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2026.01</div><div class="tl-body"><h4>Femtech × Tech 共創カンファレンス Femtech CONNECT</h4></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2026.04</div><div class="tl-body"><h4>STEM GATE ｜ 理工系大学生のための企業交流会</h4><span>旭化成株式会社・日本航空株式会社と共催</span></div></div>
+    </div>
+    <div class="gallery">
+      <img src="https://tomokoogasahara.github.io/womtech_lp/img/p1230814a-1.png" alt="イベントの様子1" loading="lazy">
+      <img src="https://tomokoogasahara.github.io/womtech_lp/img/p1299710a-1.png" alt="イベントの様子2" loading="lazy">
+      <img src="https://tomokoogasahara.github.io/womtech_lp/img/4-63.png" alt="イベントの様子3" loading="lazy">
+    </div>
+
+    <div class="media reveal">
+      <span class="eyebrow">Media</span>
+      <h3 class="media-title">メディア掲載実績</h3>
+      <div class="media-list">
+        <a href="https://www.sankei.com/article/20250506-BF23YEDRAFKT7JIFCHBHMLGI3E/photo/WNCH5EP6KZNYXLQIU3JIGBZIIE/" target="_blank" rel="noopener">産経新聞</a>
+        <a href="https://www.nikkei.com/article/DGKKZO94427680V10C26A2TYA000/" target="_blank" rel="noopener">日経新聞</a>
+        <a href="https://biz.chunichi.co.jp/news/article/10/122303/" target="_blank" rel="noopener">中日新聞</a>
+        <a href="https://www.nikkan.co.jp/articles/view/00758521?gnr_footer=0083217" target="_blank" rel="noopener">日刊工業新聞</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEM GATE -->
+<section class="section" id="stemgate" style="background:var(--lav)">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">Featured Program</span>
+      <h2 class="sec-title">STEM GATE</h2>
+      <p class="sec-lead">「問いを立てる → 調べる → 伝える」<br>学生自身が“リサーチャー”となり、自分の関心を起点に企業を能動的に理解するキャリア探索プログラムです。</p>
+    </div>
+
+    <div class="sg-top reveal">
+      <div class="sg-photo">
+        <div class="frame"><img src="https://prcdn.freetls.fastly.net/release_image/142328/6/142328-6-42084cf30177dd882345e9cbd6179708-1518x1079.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=1200&amp;height=825" alt="STEM GATE 企業交流会 集合写真" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="sg-lead">理工系女性コミュニティ Wom-tech が、旭化成株式会社および日本航空株式会社と連携し、STEM分野で学ぶ大学生を対象とした企業交流イベント「理工系大学生のための企業交流会」を MIX丸の内 にて初開催しました。大学1年生から修士1年生までの学生が参加しました。</p>
+        <div class="sg-meta">
+          <span>大学1年 <b>〜</b> 修士1年</span>
+          <span>約2.5ヶ月の探究プロセス</span>
         </div>
-      </section>
-      <section id="register" class="registration-process">
-        <h2>Wom-techメンバー登録までの流れ</h2>
-        <p>Wom-techはメンバーの方に安心安全な場を提供するため<br />メンバーの登録までに複数のステップを設けています</p>
-        <div class="process-steps">
-          <div class="step">
-            <img src="img/462-1.png" alt="申し込みステップ" />
-            <h3>1.申し込み</h3>
-            <p>下記の申込みボタンのリンク先から必要事項を記入して、お申込み下さい。</p>
-          </div>
-          <div class="step">
-            <img src="img/1170-1.png" alt="説明会予約ステップ" />
-            <h3>2. 説明会予約</h3>
-            <p>後日ご案内する説明会をご予約下さい。（オンライン・所要時間約15分）</p>
-          </div>
-          <div class="step">
-            <img src="img/1361-1.png" alt="利用開始ステップ" />
-            <h3>3. 利用開始</h3>
-            <p>メンバー限定のSlackにご招待します。</p>
-          </div>
-        </div>
-        <a
-          href="https://form.run/@womtech--Q6fi8AujP1lGubnPHypq"
-          class="cta-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >メンバー登録はこちら</a
-        >
-      </section>
-      <section class="community-achievements">
-        <h2>コミュニティの実績</h2>
-        <div class="achievement">
-          <h3>理工系女性約50人のコミュニティ・メンバーと繋がることができます</h3>
-          <p>大学生の所属学部：工学部・理学部・理工学部<br />社会人の所属：自動車メーカ・電子機器メーカなど</p>
-        </div>
-        <div class="achievement">
-          <h3>イベント開催実績</h3>
+        <p class="sg-partners">連携企業：<b>旭化成株式会社</b> ／ <b>日本航空株式会社</b></p>
+      </div>
+    </div>
+
+    <div class="sg-flow reveal">
+      <div class="sg-step"><div class="no">01</div><h4>問いを立てる</h4><p>自分の関心や価値観からリサーチテーマを設定</p></div>
+      <div class="sg-step"><div class="no">02</div><h4>調べる</h4><p>企業を訪問し、現場や社員との対話を通じて探究</p></div>
+      <div class="sg-step"><div class="no">03</div><h4>伝える</h4><p>得られた気づきを自分の言葉で言語化し共有</p></div>
+    </div>
+
+    <div class="sg-cta reveal">
+      <a class="btn btn-primary" href="https://stemgate.my.canva.site" target="_blank" rel="noopener">STEM GATEを詳しく見る →</a>
+      <a class="btn btn-ghost" href="https://forms.gle/jhYXqDLYfFXUKsie9" target="_blank" rel="noopener">協力企業のお問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section" id="management" style="background:var(--lav)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:44px" class="reveal">
+      <span class="eyebrow">Message</span>
+      <h2 class="sec-title">運営からのご挨拶</h2>
+    </div>
+    <div class="founder reveal">
+      <div class="photo"><img src="https://tomokoogasahara.github.io/womtech_lp/img/1.png" alt="代表：小笠原知子"></div>
+      <div>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="role">代表</div>
+        <h3>小笠原 知子</h3>
+        <p>工学部機械工学科を卒業後、2008年、重工業メーカに入社。航空宇宙製品の生産技術開発に従事。育休後の復職に「働きたいけど働けない」経験がきっかけとなって2021年に完成車メーカーに転職。本業の傍ら立ち上げた、理工系女性コミュニティWom-techを運営している。</p>
+        <div class="awards">
+          <div class="awards-h">受賞歴</div>
           <ul>
-            <li>2024.2　ものづくりとジェンダーの新しい関係（名古屋工業大学・加野准教授）</li>
-            <li>2024.6　STEM女子未来会議（スタンフォード大学・松本杏奈さん）</li>
-            <li>2024.9　生成AIの仕組みと活用（株式会社クラフターCEO・小島舞子さん）</li>
-            <li>2024.12　近代＝男性主導社会の黄昏を前に（大阪大学/京都大学名誉教授・伊藤公雄さん）</li>
-            <li>
-              2025.4　STEM女子未来会議（早稲田大学・高坂実優さん、中央大学・高橋彩乃さん<br />　　　　　　お茶の水女子大学・篠田万穂さん、株式会社キヤノン　飯淵可奈江さん）
-            </li>
+            <li>2024年度 JWEF女性技術者に贈る奨励賞　審査員特別賞</li>
+            <li>D&amp;I AWARD 個人賞　トレイルブレイザー賞</li>
+            <li>豊田市アクセラレータープログラム TAKEOFF　マネーフォワード賞</li>
+          </ul>
+          <div class="awards-h" style="margin-top:18px">講演実績</div>
+          <ul>
+            <li>ネプコンジャパン（東京・名古屋）</li>
           </ul>
         </div>
-        <div class="event-photos">
-          <h3>イベントの様子</h3>
-          <img src="img/p1230814a-1.png" alt="イベント写真1" />
-          <img src="img/p1299710a-1.png" alt="イベント写真2" />
-          <img src="img/4-63.png" alt="イベント写真3" />
-        </div>
-      </section>
-      <section id="management" class="management-greeting">
-        <h2>Wom-tech運営からのご挨拶</h2>
-        <div class="manager-profile">
-          <img src="img/1.png" alt="代表：小笠原知子" />
-          <div class="manager-info">
-            <h3>代表：小笠原　知子</h3>
-            <p>
-              工学部機械工学科を卒業後、2008年、重工業メーカに入社。航空宇宙製品の生産技術開発に従事。育休後の復職に「働きたいけど働けない」経験がきっかけとなって2021年に完成車メーカーに転職。本業の傍ら立ち上げた、理工系女性コミュニティWom-techを運営している。
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="contact">
-        <h2>お問い合わせ</h2>
-        <p>
-          私たちの活動に賛同し、Wom-techをご利用いただける法人会員サービスもご提供しております。お気軽にお問い合わせください。
-        </p>
-        <p>イベントの共催・協賛・後援／学生向けのイベント開催／学生向けのPR記事配信</p>
-        <a
-          href="https://form.run/@womtech--ycRvyDuDyI5ILrTb9Nlp"
-          class="cta-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >お問い合わせはこちら</a
-        >
-      </section>
-    </main>
-    <footer>
-      <div class="social-media">
-        <p>Wom-tech 公式Instagram</p>
-        <a href="https://www.instagram.com/womtech_stem/" target="_blank" rel="noopener noreferrer">
-          <img src="img/image-7.png" alt="Instagram" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow" style="color:#fff">Contact</span>
+      <h2>一緒に、理工系の未来をひらく。</h2>
+      <p>活動に賛同いただける法人会員サービスもご提供しております。イベントの共催・協賛・後援、学生向けのイベント開催、学生向けのPR記事配信など、お気軽にお問い合わせください。</p>
+      <div class="tags">
+        <span>イベント共催・協賛・後援</span>
+        <span>学生向けイベント開催</span>
+        <span>学生向けPR記事配信</span>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://forms.gle/cbUzBKShFejvFPTx6" target="_blank" rel="noopener">お問い合わせはこちら</a>
+        <a class="btn btn-white-ghost" href="https://forms.gle/cnMAUdtykoY2q6gv5" target="_blank" rel="noopener">メンバー登録</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="#top"><img src="https://tomokoogasahara.github.io/womtech_lp/img/w-logo-1.png" alt="Wom-techロゴ">Wom-tech</a>
+      <div class="foot-social">
+        <a class="ig-btn" href="https://www.instagram.com/womtech_stem/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg>
+          <span class="ig-txt">公式Instagram<b>@womtech_stem</b></span>
+          <span class="ig-follow">フォローする</span>
         </a>
       </div>
-      <p class="copyright">＠Wom-tech All Rights Reserved.</p>
-    </footer>
-  </body>
+    </div>
+    <div class="foot-bottom">
+      <nav class="foot-nav">
+        <a href="#about">Wom-techとは</a>
+        <a href="#contents">出来ること</a>
+        <a href="#steps">登録の流れ</a>
+        <a href="#results">実績</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <div>&copy; Wom-tech All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// header scroll state
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+// mobile menu
+const toggle=document.getElementById('toggle'),nav=document.getElementById('navlinks');
+toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+// reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*80)+'ms';io.observe(el)});
+</script>
+</body>
 </html>
