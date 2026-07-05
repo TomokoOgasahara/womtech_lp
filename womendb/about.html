@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方法論と免責 | STEM GATE 女性活躍データダッシュボード</title>
+<style>
+:root{--violet:#5b2ab5;--violet-d:#3b1b78;--ink:#24273a;--sub:#6b7280;--line:#e5e7ee;--bg:#f7f7fb}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+header{background:var(--violet-d);color:#fff;padding:16px 26px}
+header h1{font-size:19px}
+main{max-width:860px;margin:0 auto;padding:30px 26px 60px}
+h2{font-size:18px;color:var(--violet-d);margin:28px 0 10px}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:16px}
+a{color:var(--violet)}
+.back{display:inline-block;margin-top:24px;font-size:14px}
+</style>
+</head>
+<body>
+<header><h1>STEM GATE 女性活躍データダッシュボード — 方法論と免責</h1></header>
+<main>
+<div class="card">
+
+<h2>1. このサイトについて</h2>
+<p>本ダッシュボードは、理工系女性コミュニティWom-tech / STEM GATE運営事務局が、理工系女子学生をはじめとする求職者の企業研究を支援する目的で提供する検証用プロトタイプです。企業の公式な評価・格付け・推薦を行うものではありません。</p>
+
+<h2>2. データの出典</h2>
+<ul>
+<li>厚生労働省「女性の活躍推進企業データベース」オープンデータ(全体版CSV)を使用しています。</li>
+<li>オープンデータは<a href="https://positive-ryouritsu.mhlw.go.jp/positivedb/opendata" target="_blank">同データベースのオープンデータページ</a>で公開されており、政府標準利用規約に基づき二次利用しています。</li>
+<li>掲載データの内容は、各企業が女性活躍推進法に基づき自ら公表した情報です。取得日はダッシュボード上部に表示しています。</li>
+</ul>
+
+<h2>3. 指標の取り扱い</h2>
+<ul>
+<li>複数の雇用管理区分が公表されている項目は、機械的に「雇用管理区分1」の値を採用しています。区分の設定は企業により異なるため、正確な理解には原典の確認が必要です。</li>
+<li>「勤続年数の男女差」は公表された男女それぞれの平均継続勤務年数から算出しています。</li>
+<li>「非開示」は本オープンデータ上で数値が確認できなかった項目を指します。他の媒体(有価証券報告書等)で公表されている場合があります。</li>
+<li>データ集計時点・算出条件(対象範囲・期間・定義)は企業により異なります。異なる企業間の数値の厳密な比較には限界があります。</li>
+</ul>
+
+<h2>4. 参考グレードの算出方法(全文公開)</h2>
+<ul>
+<li>対象: 8指標(採用の女性比率/女性労働者比率/女性管理職比率/女性役員比率/男女賃金差異/勤続年数の男女差/男性育休取得率/平均残業時間)のうち3項目以上を開示している企業のみ。2項目以下の企業には算出しません。</li>
+<li>各指標を全体レンジで0〜1に正規化し、開示項目の平均×100を基礎点とします。</li>
+<li>非開示1項目につき8点を減点します(開示姿勢を評価に反映するため)。</li>
+<li>S: 72点以上 / A: 58点以上 / B: 42点以上 / C: 42点未満。</li>
+<li>グレードは公表データのみから機械的に算出した参考値であり、職場の実態・企業の価値を保証するものではありません。</li>
+</ul>
+
+<h2>5. 自動生成コメント(考察)について</h2>
+<p>ダッシュボード内の考察コメントは、公表データと業種平均の比較のみに基づき、事前に定義したルールで機械的に生成しています。人間や生成AIによる主観的評価・伝聞・口コミは含みません。</p>
+
+<h2>6. 免責事項</h2>
+<ul>
+<li>本サイトの情報の正確性・完全性・最新性について保証するものではありません。CSVからの変換過程で誤りが生じる可能性があります。</li>
+<li>本サイトの情報に基づく判断・行動により生じたいかなる損害についても、運営者は責任を負いません。</li>
+<li>企業のご担当者様: 掲載内容についてのご指摘・修正のご要望は、下記の連絡先までお知らせください。確認の上、速やかに対応します。掲載データの元となる公表内容の修正は、厚生労働省「女性の活躍推進企業データベース」にて行えます。</li>
+</ul>
+
+<h2>7. お問い合わせ</h2>
+<p>Wom-tech / STEM GATE運営事務局<br>Mail: womtech1216@gmail.com</p>
+
+<a class="back" href="./">← ダッシュボードに戻る</a>
+</div>
+</main>
+</body>
+</html>
