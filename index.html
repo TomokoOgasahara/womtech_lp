@@ -187,6 +187,9 @@ header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba
 .tl-date{font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--coral);font-size:1.05rem;transition:.2s;position:relative;padding-left:22px}
 .tl-date::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--purple);box-shadow:0 0 0 4px var(--lav)}
 .tl-body h4{font-size:1.08rem;font-weight:700;line-height:1.55}
+.tl-body h4 a{color:var(--purple);text-decoration:none;border-bottom:1px solid rgba(63,154,217,.4);transition:border-color .2s,opacity .2s}
+.tl-body h4 a:hover{border-bottom-color:var(--purple);opacity:.8}
+.tl-body h4 a::after{content:"↗";font-size:.78em;margin-left:.3em;vertical-align:.08em;opacity:.7}
 .tl-body span{display:block;color:var(--ink-soft);font-size:.88rem;margin-top:4px}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
 .gallery img{border-radius:16px;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-sm);transition:.35s}
@@ -446,7 +449,7 @@ footer{background:#140e26;color:#cfc7e8;padding:56px 0 30px;margin-top:96px}
       <div class="tl-item reveal"><div class="tl-date">2025.11</div><div class="tl-body"><h4>ケミカルマテリアルジャパン2025</h4><span>「未来をひらく化学のお仕事」学生向けセミナー開催</span></div></div>
       <div class="tl-item reveal"><div class="tl-date">2026.01</div><div class="tl-body"><h4>Femtech × Tech 共創カンファレンス Femtech CONNECT</h4></div></div>
       <div class="tl-item reveal"><div class="tl-date">2026.04</div><div class="tl-body"><h4>STEM GATE ｜ 理工系大学生のための企業交流会</h4><span>旭化成株式会社・日本航空株式会社と共催</span></div></div>
-      <div class="tl-item reveal"><div class="tl-date">2026.09</div><div class="tl-body"><h4>STEM女子未来会議2026</h4><span>内閣府 STEM Girls Ambassadors（理工系女子応援大使）／経済産業省・杉本雛乃さん</span></div></div>
+      <div class="tl-item reveal"><div class="tl-date">2026.09</div><div class="tl-body"><h4><a href="https://tomokoogasahara.github.io/stem2026/" target="_blank" rel="noopener">STEM女子未来会議2026</a></h4><span>内閣府 STEM Girls Ambassadors（理工系女子応援大使）／経済産業省・杉本雛乃さん</span></div></div>
     </div>
     <div class="gallery">
       <img src="https://tomokoogasahara.github.io/womtech_lp/img/p1230814a-1.png" alt="イベントの様子1" loading="lazy">
